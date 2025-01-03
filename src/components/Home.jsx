@@ -163,6 +163,8 @@ function App() {
   const [selectedDate, setSelectedDate] = useState(
     moment().format("YYYY-MM-DD")
   );
+  const maxDate = moment().format("YYYY-MM-DD");
+  const minDate = moment().subtract(1, "year").format("YYYY-MM-DD");
   const location = useLocation();
   const props = location.state;
 
@@ -312,6 +314,8 @@ function App() {
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
               className="border border-gray-300 rounded-lg px-4 py-2 mb-4 w-full"
+              min={minDate}
+              max={maxDate}
             />
             <ul>
               {habits.map((habit) => (

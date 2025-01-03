@@ -28,7 +28,7 @@ function Analytics() {
   return (
     <div>
       <Navbar {...props} />
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
+      <div className=" bg-gray-100 flex flex-col items-center py-10">
         <h1 className="text-4xl font-bold mb-6">Habit Analytics</h1>
         <div className="bg-white w-96 shadow-md rounded-lg p-6">
           {habitStats.map((stat) => (

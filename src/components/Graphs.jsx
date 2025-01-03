@@ -34,7 +34,9 @@ function Graphs(props) {
             acc[status.date] += status.completed ? 1 : 0;
             return acc;
           }, {});
-
+          console.log(data);
+          console.log(response.data);
+          
           setAnalyticsData({
             labels: Object.keys(data),
             datasets: [
@@ -52,9 +54,8 @@ function Graphs(props) {
   }, [startDate, endDate]);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
-      <h1 className="text-4xl font-bold mb-6">Habit Analytics</h1>
-
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center">
+      {/* <h1 className="text-4xl font-bold mb-6">Habit Analytics</h1> */}
       <div className="mb-4">
         <label className="mr-2">Start Date:</label>
         <input
