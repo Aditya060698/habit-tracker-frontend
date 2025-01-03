@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/login', { email, password });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, { email, password });
       localStorage.setItem('token', response.data.token);
       
       navigate('/home',{state:{token:response.data.token,...jwtDecode(response.data.token)}});

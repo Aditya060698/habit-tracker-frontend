@@ -13,7 +13,7 @@ function Analytics() {
     console.log(props);
 
     axios
-      .get(`http://localhost:8000/api/analytics/${props.userId}`, {
+      .get(`${process.env.REACT_APP_API_URL}/api/analytics/${props.userId}`, {
         headers: {
           Authorization: `Bearer ${props.token}`,
           "Content-Type": "application/json",

@@ -20,7 +20,7 @@ function Graphs(props) {
   
   useEffect(() => {
       axios
-        .get(`http://localhost:8000/api/habits/${props.userId}/history`, {
+        .get(`${process.env.REACT_APP_API_URL}/api/habits/${props.userId}/history`, {
           params: { startDate, endDate },
           headers: {
             Authorization: `Bearer ${props.token}`,

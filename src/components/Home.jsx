@@ -17,7 +17,7 @@
 //       console.log(props);
 
 //       axios
-//         .get(`http://localhost:8000/api/habits/${props.userId}`, {
+//         .get(`${process.env.REACT_APP_API_URL}/api/habits/${props.userId}`, {
 //           headers: {
 //             Authorization: `Bearer ${props.token}`,
 //             "Content-Type": "application/json",
@@ -36,7 +36,7 @@
 //     try {
 //       axios
 //         .post(
-//           "http://localhost:8000/api/habits",
+//           "${process.env.REACT_APP_API_URL}/api/habits",
 //           {
 //             user: {
 //               id: props.userId,
@@ -64,7 +64,7 @@
 //   const toggleHabitCompletion = (habitId, completed) => {
 //     axios
 //       .post(
-//         `http://localhost:8000/api/habits/${habitId}/status`,
+//         `${process.env.REACT_APP_API_URL}/api/habits/${habitId}/status`,
 //         {
 //           date: selectedDate,
 //           completed: completed,
@@ -171,7 +171,7 @@ function App() {
   useEffect(() => {
     try {
       axios
-        .get(`http://localhost:8000/api/habits/${props.userId}`, {
+        .get(`${process.env.REACT_APP_API_URL}/api/habits/${props.userId}`, {
           headers: {
             Authorization: `Bearer ${props.token}`,
             "Content-Type": "application/json",
@@ -189,7 +189,7 @@ function App() {
   useEffect(() => {
     if (selectedDate) {
       axios
-        .get(`http://localhost:8000/api/habits/${props.userId}/status`, {
+        .get(`${process.env.REACT_APP_API_URL}/api/habits/${props.userId}/status`, {
           params: { date: selectedDate },
           headers: {
             Authorization: `Bearer ${props.token}`,
@@ -211,7 +211,7 @@ function App() {
     try {
       axios
         .post(
-          "http://localhost:8000/api/habits",
+          `${process.env.REACT_APP_API_URL}/api/habits`,
           {
             user: {
               id: props.userId,
@@ -241,7 +241,7 @@ function App() {
     const completed = !habitStatus[habitId];
     axios
       .post(
-        `http://localhost:8000/api/habits/${habitId}/status`,
+        `${process.env.REACT_APP_API_URL}/api/habits/${habitId}/status`,
         {
           date: selectedDate,
           completed,
